@@ -1,0 +1,159 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <ion-title>Personal</ion-title>
+  <hr />
+
+  <!-- name field -->
+  <ion-label>Name</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input type="text" placeholder="Ex. Joe Dohan" formControlName="name">
+    </ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div class="alert alert-danger ml-4" *ngIf="name.touched && !name.valid">
+    <div *ngIf="name.hasError('required')">
+      <strong>Name</strong> {{ errorMessages[0].required }}
+    </div>
+    <div *ngIf="name.hasError('pattern')">
+      {{ errorMessages[1].pattern }} <strong>Name</strong>
+    </div>
+  </div>
+
+  <!-- date of birth field -->
+  <ion-label>Date of Birth</ion-label>
+  <ion-item>
+    <ion-label>Month / Day / Year</ion-label>
+    <ion-datetime
+      formControlName="dateOfBirth"
+      displayFormat="MMM DD YYYY"
+      pickerFormat="MMM DD YYYY"
+    >
+    </ion-datetime>
+  </ion-item>
+
+  <ion-title class="mt-4">Account</ion-title>
+  <hr />
+
+  <!-- email field -->
+  <ion-label>Email</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input
+      type="email"
+      placeholder="Ex. JoeDohan@dude.io"
+      formControlName="email"
+    ></ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div class="alert alert-danger ml-4" *ngIf="email.touched && !email.valid">
+    <div *ngIf="email.hasError('required')">
+      <strong>Email</strong> {{ errorMessages[0].required }}
+    </div>
+    <div *ngIf="email.hasError('email')">
+      {{ errorMessages[1].pattern }} <strong>Email</strong>
+    </div>
+  </div>
+
+  <!-- password field -->
+  <ion-label>Password</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div
+    class="alert alert-danger ml-4"
+    *ngIf="password.touched && !password.valid"
+  >
+    <div *ngIf="password.hasError('required')">
+      <strong>Password</strong> {{ errorMessages[0].required }}
+    </div>
+  </div>
+
+  <!-- very password field -->
+  <ion-label>Verify Password</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input type="password" formControlName="confirmPass"></ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div
+    class="alert alert-danger ml-4"
+    *ngIf="confirmPass.touched && !confirmPass.valid"
+  >
+    <div *ngIf="confirmPass.hasError('missmatch')">
+      <strong>Passwords</strong> {{ errorMessages[2].match }}
+    </div>
+  </div>
+
+  <ion-title class="mt-4">Contact</ion-title>
+  <hr />
+
+  <!-- address field -->
+  <ion-label>Address</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input
+      type="address"
+      placeholder="Ex. 938 Jackson St."
+      formControlName="address"
+    ></ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div
+    class="alert alert-danger ml-4"
+    *ngIf="address.touched && !address.valid"
+  >
+    <div *ngIf="address.hasError('required')">
+      <strong>Address</strong> {{ errorMessages[0].required }}
+    </div>
+    <div *ngIf="address.hasError('pattern')">
+      {{ errorMessages[1].pattern }} <strong>Address</strong>.
+    </div>
+  </div>
+
+  <!-- city field -->
+  <ion-label>City</ion-label>
+  <ion-item class="item-form-md">
+    <ion-input
+      type="text"
+      placeholder="Ex. San Diego"
+      formControlName="city"
+      class="input-sm"
+    ></ion-input>
+  </ion-item>
+
+  <!-- error messages  -->
+  <div class="alert alert-danger ml-4" *ngIf="city.touched && !city.valid">
+    <div *ngIf="city.hasError('required')">
+      <strong>City</strong> {{ errorMessages[0].required }}
+    </div>
+    <div *ngIf="city.hasError('pattern')">
+      {{ errorMessages[1].pattern }} <strong>City</strong>
+    </div>
+  </div>
+
+  <!-- state field -->
+  <ion-label>State</ion-label>
+  <ion-item class="item-form-md">
+    <ion-label> - Select your state -</ion-label>
+    <ion-select formControlName="state">
+      <ion-option *ngFor="let state of states; let index = i" [value]="index">{{
+        state
+      }}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- submit button -->
+  <ion-row class="pl-5 pr-3 mt-2">
+    <ion-col></ion-col>
+    <ion-col col-12 col-lg-3 offset-lg-7>
+      <button ion-button block full type="submit" [hidden]="!form.valid">
+        Submit
+      </button>
+    </ion-col>
+  </ion-row>
+  <div class="alert alert-danger ml-4" *ngIf="!form.valid">
+    {{ errorMessages[3].missing }}
+  </div>
+</form>

@@ -1,14 +1,44 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content id="body" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        col-12
+        col-md-8
+        offset-md-2
+        col-lg-8
+        offset-lg-2
+        col-xl-8
+        offset-xl-2
+      >
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <h2>Welcome to the DUDE Exercise</h2>
+                <p>
+                  The goal is to create a responsive form, that is usefull in
+                  devices like mobile phones, tablets and desktops. Please use
+                  Bootstrap 4.
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 col-md-7 col-lg-7>
+            <div class="card m-3 pt-4 pr-4">
+              <form-component></form-component>
+            </div>
+          </ion-col>
+          <ion-col col-12 col-md-5 col-lg-5>
+            <ion-card class="pl-3">
+              <ion-card-content>
+                <img #logo src="../../assets/imgs/DUDE-logo.png" alt="Logo" />
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

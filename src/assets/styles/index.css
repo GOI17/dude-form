@@ -1,0 +1,65 @@
+* {
+    font-weight: 100;
+}
+
+#body {
+    background-color: #ffffff;
+}
+
+/* custom style for ion-card */
+
+.card {
+    box-shadow: #d3ded3 0 2px !important;
+    border-radius: 7px;
+}
+
+.card h2 {
+    font-size: 5.8rem;
+    font-weight: 100;
+}
+
+.card p {
+    font-size: 2.2rem;
+    font-weight: 100;
+}
+
+/* custom style for ion-input */
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-color: #f53d3d;
+    -webkit-box-shadow: inset 0 0 0 0 #f53d3d !important;
+    box-shadow: inset 0 0 0 0 #f53d3d !important;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-color: #32db64;
+    -webkit-box-shadow: inset 0 0 0 0 #32db64 !important;
+    box-shadow: inset 0 0 0 0 #32db64 !important;
+}
+
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+    border-color: #488aff;
+    -webkit-box-shadow: inset 0 0 0 0 #488aff !important;
+    box-shadow: inset 0 0 0 0 #488aff !important;
+}
+
+.item-md.item-block .item-inner {
+    padding: 8px 8px 8px 8px !important;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+
+/* custom style for ion-label */
+
+ion-label.label {
+    font-size: 18px;
+    color: #808080;
+    margin: 10px 0 10px 16px !important;
+}
+
+/* custom style for hr */
+
+hr {
+    background-color: #d3d3d3 !important;
+    margin-left: 15px;
+}
